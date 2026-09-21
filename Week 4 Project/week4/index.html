@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yellowstone National Park</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Explore Yellowstone National Park</h1>
+    </header>
+    <main>
+      <section>
+        <h2>About the Park</h2>
+        <p>
+          Yellowstone was the first national park in the United States,
+          established in 1872. It stretches across Wyoming, Montana, and Idaho.
+        </p>
+      </section>
+      <section>
+        <h2>Graphics</h2>
+        <canvas id="banner" width="800" height="250">
+          Your browser does not support the canvas element.
+        </canvas>
+        <h3>Canvas Shape</h3>
+        <canvas id="shapeCanvas" width="300" height="200">
+          Your browser does not support the canvas element.
+        </canvas>
+        <h3>Canvas Gradient</h3>
+        <canvas id="gradientCanvas" width="300" height="200">
+          Your browser does not support the canvas element.
+        </canvas>
+        <h3>Canvas Text</h3>
+        <canvas id="textCanvas" width="300" height="200">
+          Your browser does not support the canvas element.
+        </canvas>
+      </section>
+      <section>
+        <h2>This is 100% real footage</h2>
+        <video controls>
+          <source
+            src="video/Sample Audio Video/SampleVideo_1280x720_1mb.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+        <p class="disclaimer">
+          *Disclaimer: Actual Yellowstone wildlife may look different.
+        </p>
+      </section>
+      <section>
+        <h2>Sounds of Yellowstone</h2>
+        <audio controls>
+          <source src="audio/bensound-hey.mp3" type="audio/mp3" />
+          Your browser does not support the audio tag.
+        </audio>
+        <p>
+          Hear the rivers, birds, and wildlife found throughout the park when
+          humans are not watching.
+        </p>
+      </section>
+      <section>
+        <h2>Park Highlight</h2>
+        <img
+          src="images/yellowstone.jpg"
+          alt="Scenic view of Yellowstone National Park"
+        />
+        <p>
+          Grand Prismatic Spring is the largest hot spring in the United States
+          and is famous for its bright rainbow colors.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>Jeremy Francis | Intermediate Web Design</p>
+    </footer>
+    <script>
+      var banner = document.getElementById("banner");
+      var ctx = banner.getContext("2d");
+
+      var grd = ctx.createLinearGradient(0, 0, 800, 0);
+      grd.addColorStop(0, "skyblue");
+      grd.addColorStop(1, "lightgreen");
+      ctx.fillStyle = grd;
+      ctx.fillRect(0, 0, 800, 250);
+
+      ctx.beginPath();
+      ctx.moveTo(250, 250);
+      ctx.lineTo(400, 80);
+      ctx.lineTo(550, 250);
+      ctx.closePath();
+      ctx.fillStyle = "green";
+      ctx.fill();
+
+      ctx.font = "40px Arial";
+      ctx.fillStyle = "white";
+      ctx.fillText("Yellowstone", 30, 60);
+
+      var shape = document.getElementById("shapeCanvas");
+      var ctx2 = shape.getContext("2d");
+      ctx2.beginPath();
+      ctx2.moveTo(50, 180);
+      ctx2.lineTo(150, 20);
+      ctx2.lineTo(250, 180);
+      ctx2.closePath();
+      ctx2.fillStyle = "green";
+      ctx2.fill();
+
+      var gradient = document.getElementById("gradientCanvas");
+      var ctx3 = gradient.getContext("2d");
+      var grd2 = ctx3.createLinearGradient(0, 0, 300, 0);
+      grd2.addColorStop(0, "blue");
+      grd2.addColorStop(1, "orange");
+      ctx3.fillStyle = grd2;
+      ctx3.fillRect(0, 0, 300, 200);
+
+      var text = document.getElementById("textCanvas");
+      var ctx4 = text.getContext("2d");
+      ctx4.font = "bold 30px Arial";
+      ctx4.fillStyle = "darkgreen";
+      ctx4.fillText("Visit Yellowstone", 20, 100);
+    </script>
+  </body>
+</html>
