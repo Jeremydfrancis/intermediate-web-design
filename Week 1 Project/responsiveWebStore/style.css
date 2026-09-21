@@ -1,0 +1,388 @@
+/* #region CSS RESET */
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Increase line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+/* #endregion CSS RESET */
+/* #region FONTS */
+
+:root {
+  --fs-sm: clamp(0.85rem, 0.8rem + 0.25vw, 1rem);
+  --fs-base: clamp(1rem, 0.95rem + 0.3vw, 1.15rem);
+  --fs-md: clamp(1.1rem, 1rem + 0.5vw, 1.3rem);
+  --fs-lg: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
+  --fs-xl: clamp(1.9rem, 1.4rem + 2.5vw, 3rem);
+}
+
+header {
+  font-size: var(--fs-base);
+}
+
+.card-details h3 {
+  font-size: var(--fs-md);
+}
+
+.card-description p {
+  font-size: var(--fs-sm);
+}
+
+.social-links a {
+  font-size: var(--fs-lg);
+}
+/* #endregion FONTS */
+/* #region Nav */
+header {
+  min-width: 100dvw;
+  background-color: rgb(35, 40, 31);
+  padding: clamp(0.5rem, 3vw, 2rem);
+
+  & .navbar {
+    min-height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  & .nav-links {
+    & ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0;
+
+      & li {
+        list-style: none;
+
+        & a {
+          text-decoration: none;
+          color: #c9c7b8;
+          transition: color 0.2s ease-in-out;
+
+          &:hover {
+            color: #b8863a;
+          }
+        }
+      }
+    }
+  }
+}
+.nav-actions {
+  & .actions-child {
+    display: flex;
+    gap: 1rem;
+    & a {
+      text-decoration: none;
+    }
+    & .account-actions {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+  }
+}
+.login-btn,
+.register-btn {
+  color: rgb(35, 40, 31);
+  padding: 0.25rem 1rem;
+  border-radius: 15px;
+  background-color: #b8863a;
+}
+.logo {
+  display: flex;
+
+  align-items: center;
+  text-wrap: nowrap;
+  text-align: center;
+  text-decoration: none;
+  gap: 1rem;
+  color: #f2f0e6;
+}
+.social-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.social-links a {
+  color: #b8863a;
+}
+
+.social-links a:hover {
+  color: #b8863a85;
+}
+/* #endregion Nav */
+/* #region Product Cards */
+.product-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-block: 3rem;
+  justify-content: space-between;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 100%;
+  max-width: 100%;
+  background-color: #f2f0e6;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.146);
+
+  & .card-img {
+    & img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+  }
+
+  & .card-details {
+    padding: 1rem 1rem 0;
+
+    & h3 {
+      font-size: 1.1rem;
+      color: rgb(35, 40, 31);
+      margin-bottom: 0.3rem;
+    }
+
+    & p {
+      font-weight: bold;
+      color: #9c6b2c;
+    }
+  }
+
+  & .card-description {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 0.5rem 1rem 1.5rem;
+
+    & p {
+      color: #6b6a57;
+      font-size: 0.95rem;
+      flex: 1;
+      margin-bottom: 1rem;
+    }
+
+    & button {
+      align-self: flex-start;
+      color: rgb(35, 40, 31);
+      background-color: #b8863a;
+      border: none;
+      padding: 0.5rem 1.25rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font: inherit;
+
+      &:hover {
+        background-color: rgba(184, 134, 58, 0.85);
+      }
+    }
+  }
+}
+
+@media (width >= 640px) {
+  .card {
+    flex: 1 1 calc(50%);
+    max-width: calc(50% - 2rem);
+  }
+}
+
+@media (width >= 1024px) {
+  .card {
+    flex: 1 1 calc(33.333%);
+    max-width: calc(33.333% - 2rem);
+  }
+}
+/* #endregion Product Cards */
+/* #region Footer */
+.footer-classic {
+  background-color: rgb(35, 40, 31);
+  color: #f2f0e6;
+  padding: 3rem 1.5rem;
+
+  & a {
+    color: #c9c7b8;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: #b8863a;
+    }
+  }
+
+  & .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  & .footer-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(242, 240, 230, 0.15);
+  }
+
+  & .footer-brand {
+    & .logo {
+      margin-bottom: 1rem;
+    }
+
+    & p {
+      font-size: 0.875rem;
+      line-height: 1.5;
+      margin: 0;
+      max-width: 65ch;
+      text-wrap: balance;
+    }
+  }
+
+  & .footer-heading {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f2f0e6;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  & .footer-links {
+    & ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    & li {
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  & .footer-bottom {
+    padding-top: 2rem;
+    font-size: 0.875rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  & .footer-copyright {
+    margin: 0;
+  }
+}
+
+@media (width >= 768px) {
+  .footer-main {
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+/* #endregion Footer */
+/* #region Parent Elements/Utilities */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+main {
+  flex: 1;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+@media (width<1200px) {
+  .container {
+    padding-inline: clamp(1rem, 4vw, 3rem);
+  }
+}
+/* #endregion Parent Elements/Utilities */
