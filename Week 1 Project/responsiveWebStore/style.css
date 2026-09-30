@@ -273,7 +273,49 @@ header {
     max-width: calc(33.333% - 2rem);
   }
 }
+/* Updated: card hover lift effect so products respond to the mouse */
+.card {
+  transition:
+    transform 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+  .card:hover {
+    transform: none;
+  }
+}
 /* #endregion Product Cards */
+/* #region Hero */
+/* Added: styling for the new hero section */
+.hero {
+  background-color: #f2f0e6;
+  border-bottom: 4px solid #b8863a;
+  padding-block: clamp(2rem, 6vw, 4rem);
+  text-align: center;
+
+  & h1 {
+    font-size: var(--fs-xl);
+    color: rgb(35, 40, 31);
+    margin-bottom: 0.75rem;
+  }
+
+  & p {
+    font-size: var(--fs-md);
+    color: #6b6a57;
+    max-width: 55ch;
+    margin-inline: auto;
+  }
+}
+/* #endregion Hero */
 /* #region Footer */
 .footer-classic {
   background-color: rgb(35, 40, 31);
