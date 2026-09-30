@@ -1,11 +1,11 @@
 # Intermediate Web Design
 
 **Name:** Jeremy Francis
-**Course:** CSCT 230 Intermediate Web Design
+**Course:** CSCT 230 Intermediate Web Design 
 
 ## About This Repository
 
-This repository is my course portfolio for CSCT 230 Intermediate Web Design. It contains my weekly web design projects, organized into one folder per week, and it will grow as the course continues. It also serves as practice with version control and professional project organization using Git and GitHub.
+This repository is my course portfolio for CSCT 230 Intermediate Web Design. It holds my weekly web design projects, organized into one folder per week. I am also using it to practice version control with Git and GitHub, so the commit history shows how my work develops over time.
 
 ## Projects Included
 
@@ -16,36 +16,20 @@ This repository is my course portfolio for CSCT 230 Intermediate Web Design. It 
 | 3 | CSS Effects Interaction Project | `Week 3 Project/week3-css-effects` |
 | 4 | Multimedia Showcase Page | `Week 4 Project/week4` |
 
-## Repository Structure
+## What I've Learned
 
-```
-intermediate-web-design/
-├── Week 1 Project/
-│   └── responsiveWebStore/
-├── Week 2 Project/
-│   └── Fonts/
-├── Week 3 Project/
-│   └── week3-css-effects/
-├── Week 4 Project/
-│   └── week4/
-└── README.md
-```
+- GitHub stores the full history of my project, so I can see what changed and go back to an earlier version if something breaks.
+- A commit is a saved checkpoint, and a clear commit message explains what changed and why.
+- A README.md file is written in Markdown, and it is the first thing people see when they open a repository.
 
-## Technologies Used
-
-- HTML5
-- CSS3 (responsive layouts, typography, effects)
-- Git and GitHub for version control
-
-## How to View a Project
-
-1. Clone the repository: `git clone https://github.com/Jeremydfrancis/intermediate-web-design.git`
-2. Open the folder for the week you want to see.
-3. Open that project's `index.html` file in your browser.
 
 ## My Favorite Project So Far
 
-My favorite project so far is the CSS Animation project. 
+My favorite project so far is CSS Animations.
+
+## Learn More
+
+New to Git? The [GitHub Docs](https://docs.github.com) are a good place to start.
 
 ## Author
 
