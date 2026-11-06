@@ -40,18 +40,6 @@ footer a {
   color: var(--brand);
 }
 
-.logo-icon {
-  display: inline-flex;
-  padding: 0.35rem;
-  border-radius: 10px;
-  background-color: var(--brand);
-
-  & img {
-    width: 1.4rem;
-    height: 1.4rem;
-  }
-}
-
 .btn-brand {
   background-color: var(--brand);
   border-color: var(--brand);
@@ -62,11 +50,6 @@ footer a {
     border-color: var(--brand-dark);
     color: #fff;
   }
-}
-
-.badge-soft {
-  background-color: var(--brand-light);
-  color: var(--brand-dark);
 }
 
 .hero {
